@@ -371,6 +371,20 @@ void VS1053::startSong()
 {
     sdi_send_fillers(2052);
 }
+//----------------------------------------------------------------------------------------------------------------------
+bool VS1053::pauseResume()
+{
+    bool retVal = false;
+    if(m_f_localfile || m_f_webstream) {
+        m_f_running = !m_f_running;
+        retVal = true;
+        //if(!m_f_running) {
+        //    memset(m_outBuff, 0, sizeof(m_outBuff));               //Clear OutputBuffer
+        //    i2s_zero_dma_buffer((i2s_port_t) m_i2s_num);
+        //}
+    }
+    return retVal;
+}
 //---------------------------------------------------------------------------------------------------------------------
 void VS1053::stopSong()
 {

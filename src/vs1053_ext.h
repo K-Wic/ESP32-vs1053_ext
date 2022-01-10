@@ -214,6 +214,7 @@ protected:
     void     showstreamtitle(const char* ml);
     void     startSong() ;                               // Prepare to start playing. Call this each
                                                          // time a new song starts.
+    bool     pauseResume() ;
     void     stopSong() ;                                // Finish playing a song. Call this after
                                                          // the last playChunk call.
     bool     isRunning() { return m_f_running; }
