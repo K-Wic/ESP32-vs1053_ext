@@ -216,6 +216,7 @@ protected:
                                                          // time a new song starts.
     void     stopSong() ;                                // Finish playing a song. Call this after
                                                          // the last playChunk call.
+    bool     isRunning() { return m_f_running; }
     void     urlencode(char* buff, uint16_t buffLen, bool spacesOnly = false);
     int      read_MP3_Header(uint8_t *data, size_t len);
     void     showID3Tag(const char* tag, const char* value);
